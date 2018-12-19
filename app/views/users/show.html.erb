@@ -1,0 +1,57 @@
+<div class="users-show-wrapper">
+  <div class="container">
+    <div class="col-md-offset-3 col-md-6 users-show-container">
+      <div class="row">
+        <h1 class="users-show-title">ユーザー詳細</h1>
+        <p class="users-show-name"><%= @user.name %></p>
+        <p class="users-show-email"><%= @user.email %></p>
+        <% if logged_in? && current_user.id == @user.id %>
+          <div class="users-show-button">
+            <%= link_to "編集", edit_user_path %>
+            <span class="users-show-delete"><%= link_to "削除", user_path, method: :delete %></span>
+          </div>
+        <% end %>
+        <div class="users-show-index-container">
+          <div class="users-show-index-title">
+            <span class="users-show-index-topics">
+              <%= link_to "投稿", user_path %>
+            </span>
+            <span class="users-show-index-favorites">
+              <%= link_to "お気に入り", users_favorites_path(id: @user.id) %>
+            </span>
+          </div>
+
+          <div class="users-show-index-index">
+            <% @user.topics.each do |topic| %>
+              <%= image_tag topic.image.url, class: "topics-index-image" %>
+              <div class="topics-index-name">
+                <%= link_to topic.user.name, user_path(id: topic.user.id) %>
+              </div>
+              <div class="topics-index-description">
+                <%= link_to topic.description, topic_path(id: topic.id) %>
+              </div>
+              <% if !topic.favorite_users.include?(current_user) %>
+                <%= link_to  favorites_path(topic_id: topic.id), method: :post do %>
+                  <span class="fa fa-heart topics-index-icon-heart unlike-btn"></span>
+                <% end %>
+              <% else %>
+                <%= link_to  favorites_path(topic_id: topic.id), method: :delete do %>
+                  <span class="fa fa-heart topics-index-icon-heart like-btn"></span>
+                <% end %>
+              <% end %>
+              <%= topic.favorites.count %>
+              <%= link_to comments_new_path(topic_id: topic.id) do %>
+                <%= image_tag "images/comment.png", class: "topics-index-icon-comment" %>
+              <% end %>
+              <% topic.comments.each do |comment| %>
+                <div class="topics-index-comments">
+                  <%= comment.text %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

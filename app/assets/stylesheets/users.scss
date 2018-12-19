@@ -1,0 +1,210 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* users#new------------------------------------------ */
+.users-new-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/brown.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .users-new-container {
+    padding-top: 120px;
+
+    .users-new-title {
+      color: white;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .form-text {
+      color: white;
+    }
+
+    .form-control {
+      height: 40px;
+      margin-bottom: 30px;
+    }
+
+    .btn-block{
+      margin-top: 50px;
+      height: 40px;
+    }
+  }
+}
+
+
+/* users#index------------------------------------------ */
+.users-index-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("images/brown.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .users-index-container {
+    padding-top: 120px;
+    text-align: center;
+
+    .users-index-title {
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .users-index-name {
+      font-size: 20px;
+      margin-bottom: 30px;
+      a {
+        color: white;
+      }
+    }
+  }
+}
+
+/* users#show------------------------------------------ */
+.users-show-wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("images/brown.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .users-show-container {
+    padding-top: 120px;
+    color: white;
+
+    .users-show-title {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .users-show-name {
+      font-size: 25px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .users-show-email {
+      font-size: 25px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .users-show-button {
+      text-align: right;
+      a {
+        color: white;
+        font-size: 15px;
+      }
+      span {
+        margin-left: 20px;
+        margin-right: 90px;
+      }
+    }
+
+    .users-show-index-container {
+      padding-top: 70px;
+
+      .users-show-index-title {
+        font-size: 20px;
+        margin-bottom: -40px;
+        a {
+          color: white;
+          margin-right: 30px;
+        }
+      }
+
+      .users-show-index-index {
+
+        .topics-index-image {
+          text-align: center;
+          width: 100%;
+          margin-top: 50px;
+        }
+
+        .topics-index-name {
+          font-size: 20px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          a {
+            color: white;
+          }
+        }
+
+        .topics-index-description {
+          font-size: 20px;
+          margin-bottom: 10px;
+          a {
+            color: white;
+          }
+        }
+
+        .topics-index-icon-comment {
+          width: 8%;
+          margin-bottom: 20px;
+          margin-left: 20px;
+        }
+
+        .topics-index-icon-heart {
+          font-size: 40px;
+        }
+
+        .like-btn {
+          color: red;
+        }
+
+        .unlike-btn {
+          color: black;
+        }
+
+        .topics-index-comments {
+          font-size: 15px;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+/* users#edit------------------------------------------ */
+.users-edit-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/brown.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .users-edit-container {
+    padding-top: 120px;
+
+    .users-edit-title {
+      color: white;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .form-text {
+      color: white;
+    }
+
+    .form-control {
+      height: 40px;
+      margin-bottom: 30px;
+    }
+
+    .btn-block{
+      margin-top: 50px;
+      height: 40px;
+    }
+  }
+}

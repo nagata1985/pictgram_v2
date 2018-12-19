@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PictgramV2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+
+    <nav class="nav">
+      <%= link_to root_path do %>
+        <%= image_tag "images/logo.png", class: "logo" %>
+      <% end %>
+      <ul class="nav-list">
+        <% if logged_in? %>
+          <li>
+            <%= link_to current_user.name, user_path(id: current_user.id) %>
+          </li>
+          <li>
+            <%= link_to "ユーザー一覧", users_path %>
+          </li>
+          <li>
+            <%= link_to "投稿一覧", topics_path %>
+          </li>
+          <li>
+            <%= link_to "新規投稿", new_topic_path %>
+          </li>
+          <li>
+            <%= link_to "ログアウト", logout_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "新規登録", new_user_path %>
+          </li>
+          <li>
+            <%= link_to "ログイン", login_path %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+
+    <%= yield %>
+
+    <script>
+      $(function(){
+        $(".alert").fadeOut(8000);
+      });
+    </script>
+
+  </body>
+</html>
