@@ -167,7 +167,9 @@
 
         .topics-index-comments {
           font-size: 15px;
-          color: white;
+          a {
+            color: white;
+          }
         }
       }
     }

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  get 'comments/new'
-  post '/comments', to: 'comments#create'
+  #get 'comments/new'
+  #post '/comments', to: 'comments#create'
 
   get 'favorites/index'
   post '/favorites', to: 'favorites#create'
@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :topics
+  resources :comments
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

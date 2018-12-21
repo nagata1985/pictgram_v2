@@ -21,12 +21,12 @@
             <% end %>
           <% end %>
           <%= topic.favorites.count %>
-          <%= link_to comments_new_path(topic_id: topic.id) do %>
+          <%= link_to new_comment_path(topic_id: topic.id) do %>
             <%= image_tag "images/comment.png", class: "topics-index-icon-comment" %>
           <% end %>
           <% topic.comments.each do |comment| %>
             <div class="topics-index-comments">
-              <%= comment.text %>
+              <%= link_to comment.text, comment_path(id: comment.id) %>
             </div>
           <% end %>
         <% end %>
