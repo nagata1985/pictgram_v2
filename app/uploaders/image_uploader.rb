@@ -14,7 +14,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def size_range
-    1..10.megabytes
+    0..10.megabytes
   end
 
   def extension_white_list

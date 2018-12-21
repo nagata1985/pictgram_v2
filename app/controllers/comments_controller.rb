@@ -25,9 +25,8 @@ class CommentsController < ApplicationController
   end
 
   def update
-　　@comment = Comment.find_by(id: params[:id])
-　　@comment.update(comment_params)
-    if @comment.save
+    @comment = Comment.find_by(id: params[:id])
+    if @comment.update(comment_params)
       redirect_to topics_path, success: 'コメントを編集しました'
     else
       flash.now[:danger] = "コメントの編集に失敗しました"

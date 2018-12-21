@@ -33,8 +33,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(id: params[:id])
-    @user.update(user_params)
-    if @user.save
+    if @user.update(user_params)
       redirect_to user_path, success: '編集に成功しました'
     else
       flash.now[:danger] = "編集に失敗しました"
