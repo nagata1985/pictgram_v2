@@ -1,13 +1,16 @@
 class CommentsController < ApplicationController
 
   before_action :authenticate_user
+  #before_action :forbid_login_user, {only: [:new, :create]}
+  before_action :ensure_correct_user, {only: [:show, :edit, :update, :destroy]}
 
   def new
     @comment = Comment.new
+
   end
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = current_user.comments.new(comment_params)
     if @comment.save
       redirect_to topics_path, success: 'コメントを投稿しました'
     else
@@ -38,6 +41,13 @@ class CommentsController < ApplicationController
       @comment = Comment.find_by(id: params[:id])
       @comment.destroy
       redirect_to topics_path, info: "コメントを削除しました"
+  end
+
+  def ensure_correct_user
+    @comment = Comment.find_by(id: params[:id])
+    if current_user.id != @comment.user_id
+      redirect_to topics_path, info: '権限がありません'
+    end
   end
 
   private

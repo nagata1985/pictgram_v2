@@ -13,7 +13,7 @@
         <% if logged_in? && current_user.id == @topic.user.id %>
           <div class="topics-show-button">
             <%= link_to "編集", edit_topic_path %>
-            <span class="topics-show-delete"><%= link_to "削除", topic_path, method: :delete %></span>
+            <span class="topics-show-delete"><%= link_to "削除", topic_path, method: :delete, data: {confirm: '本当に削除しますか？'} %></span>
           </div>
         <% end %>
       </div>

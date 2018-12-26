@@ -1,4 +1,4 @@
-<div class="comments-new-wrapper">
+<div class="comments-new-wrapper">1
   <div class="container">
     <div class="row">
       <div class="col-md-offset-3 col-md-6 comments-new-container">
@@ -8,10 +8,10 @@
             <%= f.label :コメント, class: 'form-text' %>
             <%= f.text_area :text, class: 'form-control' %>
           </div>
-          <% if logged_in? %>
+          <% if logged_in? && current_user.id == @comment.user.id %>
             <div class="topics-show-button">
               <%= link_to "編集", edit_comment_path %>
-              <span class="topics-show-delete"><%= link_to "削除", comment_path, method: :delete %></span>
+              <span class="topics-show-delete"><%= link_to "削除", comment_path, method: :delete, data: {confirm: '本当に削除しますか？'} %></span>
             </div>
           <% end %>
         <% end%>

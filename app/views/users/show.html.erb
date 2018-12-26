@@ -8,7 +8,7 @@
         <% if logged_in? && current_user.id == @user.id %>
           <div class="users-show-button">
             <%= link_to "編集", edit_user_path %>
-            <span class="users-show-delete"><%= link_to "削除", user_path, method: :delete %></span>
+            <span class="users-show-delete"><%= link_to "削除", user_path, method: :delete, data: {confirm: '本当に削除しますか？'} %></span>
           </div>
         <% end %>
         <div class="users-show-index-container">

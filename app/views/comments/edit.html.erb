@@ -8,7 +8,7 @@
             <%= f.label :コメント, class: 'form-text' %>
             <%= f.text_area :text, class: 'form-control' %>
           </div>
-          <% if logged_in? %>
+          <% if logged_in? && current_user.id == @comment.user.id %>
             <%= f.submit "保存", class: 'btn-block' %>
           <% end %>
         <% end%>
