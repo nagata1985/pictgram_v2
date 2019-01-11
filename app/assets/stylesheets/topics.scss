@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* topics#new------------------------------------------ */
+/* topics#new------------------------------------------*/
 .topics-new-wrapper {
   width: 100vw;
   height: 100vh;
@@ -41,7 +41,7 @@
   }
 }
 
-/* topicss#index------------------------------------------ */
+/* topicss#index------------------------------------------*/
 .topics-index-wrapper {
   width: 100vw;
   min-height: 100vh;
@@ -100,6 +100,18 @@
       color: black;
     }
 
+    .comments-open {
+
+    }
+
+    .page {
+      float: right;
+      font-size: 20px;
+      a {
+        color: white;
+      }
+    }
+
     .topics-index-comments {
       font-size: 15px;
       a {
@@ -109,7 +121,7 @@
   }
 }
 
-/* topics#show------------------------------------------ */
+/* topics#show------------------------------------------*/
 .topics-show-wrapper {
   width: 100vw;
   min-height: 100vh;
@@ -160,7 +172,7 @@
   }
 }
 
-/* topics#edit------------------------------------------ */
+/* topics#edit------------------------------------------*/
 .topics-edit-wrapper {
   width: 100vw;
   height: 100vh;

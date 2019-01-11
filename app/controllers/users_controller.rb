@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user, {only: [:index, :show, :edit, :update, :favorites]}
   before_action :forbid_login_user, {only: [:new, :create]}
-  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :ensure_correct_user, {only: [:show, :edit, :update, :destroy]}
 
   def index
     @users = User.all
@@ -53,8 +53,8 @@ class UsersController < ApplicationController
 
   def ensure_correct_user
     @user = User.find_by(id: params[:id])
-    if current_user.id != @user.id
-      redirect_to user_path, info: '権限がありません'
+    if current_user.id != @user.id && current_user.admin_id == nil
+      redirect_to users_path, info: "権限がありません"
     end
   end
 

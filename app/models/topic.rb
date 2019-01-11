@@ -11,4 +11,7 @@ class Topic < ApplicationRecord
   has_many :comments
   has_many :favorite_users, through: :favorites, source: 'user'
 
+  #default_scope :order => 'created_at DESC'
+  paginates_per 4
+
 end

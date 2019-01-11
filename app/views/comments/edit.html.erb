@@ -1,14 +1,14 @@
-<div class="comments-new-wrapper">
+<div class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-offset-3 col-md-6 comments-new-container">
-        <h1 class="comments-new-title">コメント</h1>
+      <div class="col-md-offset-3 col-md-6 containers">
+        <h1 class="title">コメント</h1>
         <%= form_for @comment do |f| %>
           <div class="form-group">
             <%= f.label :コメント, class: 'form-text' %>
-            <%= f.text_area :text, class: 'form-control' %>
+            <%= f.text_area :text, class: 'form-control comments-area' %>
           </div>
-          <% if logged_in? && current_user.id == @comment.user.id %>
+          <% if logged_in? && current_user.id == @comment.user.id || current_user.admin_id != nil %>
             <%= f.submit "保存", class: 'btn-block' %>
           <% end %>
         <% end%>

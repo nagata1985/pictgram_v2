@@ -45,7 +45,7 @@ class CommentsController < ApplicationController
 
   def ensure_correct_user
     @comment = Comment.find_by(id: params[:id])
-    if current_user.id != @comment.user_id
+    if current_user.id != @comment.user_id && current_user.admin_id == nil
       redirect_to topics_path, info: '権限がありません'
     end
   end

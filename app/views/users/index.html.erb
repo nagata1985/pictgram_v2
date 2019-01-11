@@ -1,7 +1,7 @@
-<div class="users-index-wrapper">
+<div class="wrapper">
   <div class="container">
-    <div class="users-index-container">
-      <h1 class="users-index-title">ユーザー一覧</h1>
+    <div class="containers">
+      <h1 class="title">ユーザー一覧</h1>
       <% @users.each do |user| %>
         <div class="users-index-name">
           <%= link_to user.name, user_path(id: user.id) %>

@@ -39,6 +39,10 @@ gem 'bcrypt'
 
 gem 'data-confirm-modal'
 
+gem 'kaminari'
+
+gem 'dropzonejs-rails'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 

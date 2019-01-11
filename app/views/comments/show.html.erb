@@ -1,17 +1,17 @@
-<div class="comments-new-wrapper">1
+<div class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-offset-3 col-md-6 comments-new-container">
-        <h1 class="comments-new-title">コメント</h1>
+      <div class="col-md-offset-3 col-md-6 containers">
+        <h1 class="title">コメント</h1>
         <%= form_for @comment do |f| %>
           <div class="form-group">
             <%= f.label :コメント, class: 'form-text' %>
-            <%= f.text_area :text, class: 'form-control' %>
+            <%= f.text_area :text, class: 'form-control comments-area' %>
           </div>
-          <% if logged_in? && current_user.id == @comment.user.id %>
-            <div class="topics-show-button">
+          <% if logged_in? && current_user.id == @comment.user.id || current_user.admin_id != nil %>
+            <div class="comments-show-button">
               <%= link_to "編集", edit_comment_path %>
-              <span class="topics-show-delete"><%= link_to "削除", comment_path, method: :delete, data: {confirm: '本当に削除しますか？'} %></span>
+              <span class="comments-show-delete"><%= link_to "削除", comment_path, method: :delete, data: {confirm: '本当に削除しますか？'} %></span>
             </div>
           <% end %>
         <% end%>

@@ -1,0 +1,265 @@
+/* 共通_nav & alert------------------------------------------ */
+.alert {
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+.nav {
+  height: 10vh;
+  width: 100%;
+  line-height: 10vh;
+  position: fixed;
+  z-index: 10;
+
+  .logo {
+    float: left;
+    height: 8vh;
+    margin: 10px 0 0 20px;
+  }
+
+  .nav-list {
+    float: right;
+
+    li {
+      font-size: 20px;
+      color: white;
+      list-style: none;
+      float: left;
+      margin: 0 20px;
+    }
+
+    a {
+      color: white;
+    }
+  }
+}
+
+/* all------------------------------------------ */
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url("images/brown.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  .container {
+    padding-top: 120px;
+
+    .title {
+      color: white;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .form-text {
+      color: white;
+    }
+
+    .form-control {
+      height: 40px;
+      margin-bottom: 30px;
+    }
+
+    .btn-block{
+      margin-top: 50px;
+      height: 40px;
+    }
+  }
+}
+
+/* tops------------------------------------------ */
+.tops-index {
+  padding-top: 30vh;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("images/top.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+  h1 {
+    font-size: 60px;
+    color: white;
+  }
+
+  h3 {
+    margin-top: 40px;
+    font-size: 30px;
+    color: white;
+  }
+}
+
+/* users#show------------------------------------------ */
+.users-show-name {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.users-show-email {
+  font-size: 25px;
+  color: white;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.users-show-button {
+  text-align: right;
+  a {
+    color: white;
+    font-size: 15px;
+  }
+  span {
+    margin-left: 20px;
+    margin-right: 90px;
+  }
+}
+
+.users-show-topics-index {
+  padding-top: 70px;
+
+  .users-show-topics-index-title {
+    font-size: 20px;
+    margin-bottom: -20px;
+    a {
+      color: white;
+      margin-right: 30px;
+    }
+  }
+}
+
+/* users#index------------------------------------------ */
+.users-index-name {
+  font-size: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  a {
+    color: white;
+  }
+}
+
+/* topics#new&edit------------------------------------------ */
+.form-image {
+  margin-bottom: 30px;
+}
+
+/* topics#show------------------------------------------ */
+.topics-show-image {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.topics-show-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  a {
+    color: white;
+  }
+}
+
+.topics-show-description {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.topics-show-button {
+  text-align: right;
+  a {
+    color: white;
+    font-size: 20px;
+  }
+  span {
+    margin-left: 20px;
+  }
+}
+
+/* topics#index------------------------------------------ */
+.topics-index-image {
+  text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.topics-index-name {
+  font-size: 20px;
+  margin-bottom: 10px;
+  a {
+    color: white;
+  }
+}
+
+.topics-index-description {
+  font-size: 20px;
+  margin-bottom: 10px;
+  a {
+    color: white;
+  }
+}
+
+.topics-index-icon-comment {
+  width: 8%;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.topics-index-icon-heart {
+  font-size: 40px;
+}
+
+.like-btn {
+  color: red;
+}
+
+.unlike-btn {
+  color: black;
+}
+
+.comments-open {
+
+}
+
+.page {
+  float: right;
+  font-size: 20px;
+  a {
+    color: white;
+  }
+}
+
+.topics-index-comments {
+  font-size: 15px;
+  a {
+    color: white;
+  }
+}
+
+/* comments------------------------------------------ */
+.comments-area {
+  height: 200px !important;
+}
+
+/* commnets#show------------------------------------------ */
+.comments-show-button {
+  text-align: right;
+
+  a {
+    color: white;
+    font-size: 20px;
+  }
+
+  .comments-show-delete {
+    margin-left: 20px;
+  }
+}

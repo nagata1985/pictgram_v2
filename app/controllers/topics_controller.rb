@@ -1,10 +1,10 @@
 class TopicsController < ApplicationController
 
   before_action :authenticate_user
-  before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :ensure_correct_user, {only: [:show, :edit, :update, :destroy]}
 
   def index
-    @topics = Topic.all.includes(:favorite_users)
+    @topics = Topic.all.includes(:favorite_users).page(params[:page])
   end
 
   def new
@@ -47,7 +47,7 @@ class TopicsController < ApplicationController
 
   def ensure_correct_user
     @topic = Topic.find_by(id: params[:id])
-    if current_user.id != @topic.user_id
+    if current_user.id != @topic.user_id && current_user.admin_id == nil
       redirect_to topics_path, info: '権限がありません'
     end
   end
